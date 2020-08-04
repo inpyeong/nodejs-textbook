@@ -14,5 +14,8 @@
     "mysql2": "^2.1.0",
     "pug": "2.0.0-beta11",
     "sequelize": "^6.3.4"
+  },
+  "devDependencies": {
+    "clean-css": "^4.2.3"
   }
 }
