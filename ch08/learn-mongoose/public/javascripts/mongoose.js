@@ -40,7 +40,7 @@ async function getUser() {
 // 댓글 로딩
 async function getComment(id) {
   try {
-    const res = await axios.get(`/users/${id}/comments`);
+    const res = await axios.get(`/comments/${id}`);
     const comments = res.data;
     const tbody = document.querySelector('#comment-list tbody');
     tbody.innerHTML = '';
