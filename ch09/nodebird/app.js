@@ -15,6 +15,7 @@ const passportConfig = require('./passport');
 const app = express();
 sequelize.sync();
 passportConfig(passport);
+console.log(1);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
