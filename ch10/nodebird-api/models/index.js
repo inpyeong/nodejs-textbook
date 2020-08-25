@@ -11,15 +11,13 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 db.User = require('./user')(sequelize, Sequelize);
 db.Post = require('./post')(sequelize, Sequelize);
-db.HashTag = require('./hashtag')(sequelize, Sequelize);
+db.Hashtag = require('./hashtag')(sequelize, Sequelize);
 db.Domain = require('./domain')(sequelize, Sequelize);
 
 db.User.hasMany(db.Post);
 db.Post.belongsTo(db.User);
-
-db.Post.belongsToMany(db.HashTag, { through: 'PostHashTag' });
-db.HashTag.belongsToMany(db.Post, { through: 'PostHashTag' });
-
+db.Post.belongsToMany(db.Hashtag, { through: 'PostHashtag' });
+db.Hashtag.belongsToMany(db.Post, { through: 'PostHashtag' });
 db.User.belongsToMany(db.User, {
   foreignKey: 'followingId',
   as: 'Followers',
