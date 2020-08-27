@@ -29,7 +29,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(session({
   resave: false,
   saveUninitialized: false,
-  secret: 'process.env.COOKIE_SECRET',
+  secret: process.env.COOKIE_SECRET,
   cookie: {
     httpOnly: true,
     secure: false,
@@ -47,7 +47,7 @@ app.use((req, res, next) => {
   const err = new Error('Not Found');
   err.status = 404;
   next(err);
-})
+});
 
 app.use((err, req, res, next) => {
   res.locals.message = err.message;
@@ -57,5 +57,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(app.get('port'), () => {
-  console.log(app.get('port'), '번 포트에서 대기 중');
+  console.log(app.get('port'), '번 포트에서 대기중');
 });
