@@ -14,7 +14,7 @@
     "mongoose": "^5.9.28",
     "morgan": "~1.9.1",
     "nunjucks": "^3.2.2",
-    "pug": "2.0.0-beta11"
+    "pug": "3.0.1"
   },
   "devDependencies": {
     "clean-css": "^4.2.3",
